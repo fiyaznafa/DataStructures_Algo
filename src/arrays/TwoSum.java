@@ -1,6 +1,6 @@
 package arrays;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,7 +12,6 @@ public class TwoSum {
     public void test1(){
         int[] nums ={2,7,11,15};
         int target =9;
-        int output[];
         System.out.println(Arrays.toString(findTwoSum(nums,target)));    }
 
     @Test
@@ -26,7 +25,6 @@ public class TwoSum {
     public void test3(){
         int[] nums ={2,7,11,15};
         int target =9;
-        int output[];
         System.out.println(Arrays.toString(findtwoSumUsingMap(nums,target)));    }
 
     @Test
@@ -53,7 +51,7 @@ public class TwoSum {
     private int[] findTwoSum(int[] nums, int target) {
         Arrays.sort(nums);
         int[] indices=  new int[2];
-        int i=0,  j=nums.length-1, sum=0;
+        int i=0,  j=nums.length-1, sum;
         while(i<j){
             sum=nums[i]+nums[j];
         if(sum == target){
@@ -69,7 +67,7 @@ public class TwoSum {
 
     private int[] findtwoSumUsingMap(int[] nums,int target){
         int[] indices = new int[2];
-        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i],i);

@@ -1,6 +1,7 @@
 package arrays;
 
-import org.testng.annotations.Test;
+
+import org.junit.Test;
 
 public class SearchInsertedPosition {
     //https://leetcode.com/problems/search-insert-position/
