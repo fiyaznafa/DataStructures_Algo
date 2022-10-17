@@ -1,6 +1,7 @@
 package arrays;
 
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
@@ -11,24 +12,21 @@ public class IntersectionArray {
     public void test1(){
         int[] x= {1,2,2,1};
         int[] y= {2,2};
-        Set<Integer> intersection = findIntersection(x, y);
-        System.out.println(intersection);
+        Assert.assertArrayEquals(new int[]{2,2},findIntersection(x,y));
     }
 
     @Test
     public void test2(){
         int[] x= {1,2,3,1};
         int[] y= {2,3};
-        Set<Integer> intersection = findIntersection(x, y);
-        System.out.println(intersection);
+        Assert.assertArrayEquals(new int[]{1,2},findIntersection(x,y));
     }
 
     @Test
     public void test3(){
         int[] x= {1,2,3,4};
         int[] y= {5,6};
-        Set<Integer> intersection = findIntersection(x, y);
-        System.out.println(intersection);
+        Assert.assertArrayEquals(new int[]{},findIntersection(x,y));
     }
 
     /*
@@ -45,7 +43,7 @@ public class IntersectionArray {
 
 
 
-    private Set<Integer> findIntersection(int[] x, int[] y) {
+    private int[] findIntersection(int[] x, int[] y) {
         Arrays.sort(x);
         Arrays.sort(y);
 
@@ -63,6 +61,11 @@ public class IntersectionArray {
                 n++;
             }
         }
-        return set;
+        int[] output = new int[set.size()];
+        int j=0;
+        for (int i:set) {
+            output[j++]=i;
+        }
+        return output;
     }
 }
