@@ -17,10 +17,12 @@ public class DoublePresentTest {
 	Pseudocode
 	1. Sort the array
 	2. Take two pointer left - start of array and right end of array
-	3. Iterate throgh the array untill left<right
-	4. If value at right < double of left return false
-	5. If value at right is less than double move left
-	6. If value at right is equal to dubale of left return true
+	3. Iterate through the array until right reaches end
+	4. If value at 2 * right > left then  left++
+	5. If value at 2 * right <>> left then  right++
+	6. Else return true
+	7. If left is negative 2*left > right , right++
+	8. 2*left<right , left++
 */
 
 
