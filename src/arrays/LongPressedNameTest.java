@@ -54,9 +54,7 @@ public class LongPressedNameTest {
                 else right++;
             }
         }
-        if(right==typed.length()&& left==name.length()-1)
-            return true;
-        else return false;
+        return right == typed.length() && left == name.length() - 1;
     }
 
 }
