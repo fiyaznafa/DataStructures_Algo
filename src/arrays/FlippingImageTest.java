@@ -29,6 +29,12 @@ public class FlippingImageTest {
         Assert.assertArrayEquals(new int[][]{{1,1,0,0},{0,1,1,0},{0,0,0,1},{1,0,1,0}},flipImage(image));
     }
 
+    @Test
+    public void testData2(){
+        int[][] image={{1,1,0,0},{1,0,0,1},{0,1,1,1},{1,0,1,0}};
+        Assert.assertArrayEquals(new int[][]{{1,1,0,0},{0,1,1,0},{0,0,0,1},{1,0,1,0}},flipImageBitWiseOperation(image));
+    }
+
     private int[][] flipImage(int[][] image){
         int [][] output=new int[image.length][image.length];
         for(int i=0;i<image.length;i++){
@@ -38,7 +44,19 @@ public class FlippingImageTest {
             }
         }
         return output;
+    }
 
+    private int[][] flipImageBitWiseOperation(int[][] image){
+        for(int i=0;i<image.length;i++){
+            for(int start=0,end= image.length-1;start<=end;start++,end--){
+                if(start==end)image[i][start]^=1;
+                else if(image[i][start]==image[i][end]){
+                    image[i][start]^=1;
+                    image[i][end]^=1;
+                }
+            }
+        }
+        return image;
     }
 
 }
