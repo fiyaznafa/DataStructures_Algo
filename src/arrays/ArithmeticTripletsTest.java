@@ -91,9 +91,10 @@ public class ArithmeticTripletsTest {
 
     /*
         Pseudocode
-        1. Add all elements to list
-        2. Iterate through the list
-        3. Check if list contains nums + diff && nums + (2*diff), increment count
+        1. Iterate through the array
+        2. Create a list
+        3. Check if list contains nums - diff && nums - (2*diff), increment count
+        4. Add element to list
      */
 
     private int arithmeticTriplet(int[] nums,int diff){
