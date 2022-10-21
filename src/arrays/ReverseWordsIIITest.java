@@ -18,19 +18,19 @@ public class ReverseWordsIIITest {
     @Test
     public void test1(){
         String  s ="Let's take LeetCode contest";
-        System.out.println(reverseWords(s));
+        System.out.println(reverseWordsIII(s));
     }
 
     @Test
     public void test2(){
         String  s ="God Ding";
-        System.out.println(reverseWords(s));
+        System.out.println(reverseWordsIII(s));
     }
 
     @Test
     public void test3(){
         String  s ="Good";
-        System.out.println(reverseWords(s));
+        System.out.println(reverseWordsIII(s));
     }
 
 /*
@@ -55,9 +55,46 @@ public class ReverseWordsIIITest {
     private String reverseString(String str){
         int i=str.length()-1;
         StringBuilder sb = new StringBuilder();
-        for(;i>=0;i--){
-            sb.append(str.charAt(i));
+        for(;i>=0;i--) sb.append(str.charAt(i));
+        return sb.toString();
+    }
+
+    private String reverseWordsII(String str){
+        int left =0,right =1;
+        StringBuilder sb = new StringBuilder();
+        while (right<str.length()){
+            if(str.charAt(right)==' '){
+                sb.append(reverseString(str.substring(left,right)));
+                sb.append(' ');
+                left=right+1;
+            }
+            if(right==str.length()-1) sb.append(reverseString(str.substring(left,right+1)));
+
+            right++;
         }
         return sb.toString();
     }
+
+
+    private String reverseWordsIII(String str){
+        int left =0,right =1,index = 0;
+        char temp;
+        char[] chars = str.toCharArray();
+        while (right<str.length()){
+            if(str.charAt(right)==' ' || right==str.length()-1){
+                if(right==str.length()-1)index=right;
+                else index=right-1;
+                while (index>left){
+                    temp=chars[index];
+                    chars[index--]=chars[left];
+                    chars[left++]=temp;
+                }
+                left=right+1;
+                right++;
+            }
+            right++;
+        }
+        return new String(chars);
+    }
+
 }
