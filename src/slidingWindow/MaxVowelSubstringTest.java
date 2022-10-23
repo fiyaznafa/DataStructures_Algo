@@ -20,14 +20,14 @@ public class MaxVowelSubstringTest {
     public void test1(){
         String str= "workaattech";
         int k=3;
-        System.out.println((maxVowelsSubString(str,k)));
+        System.out.println((maxVowelString(str,k)));
     }
 
     @Test
     public void test2(){
         String str= "workaattech";
         int k=2;
-        System.out.println((maxVowelsSubString(str,k)));
+        System.out.println((maxVowelString(str,k)));
     }
 
 
@@ -35,20 +35,34 @@ public class MaxVowelSubstringTest {
     public void test3(){
         String str= "a";
         int k=1;
-        System.out.println((maxVowelsSubString(str,k)));
+        System.out.println((maxVowelString(str,k)));
     }
 
     @Test
     public void test4(){
         String str= "work";
         int k=5;
-        System.out.println((maxVowelsSubString(str,k)));
+        System.out.println((maxVowelString(str,k)));
     }
     /*
     *   Bruteforce
     *   1. Using two for loops, one till end -k, other loop goes until k
     *   2. Count char is vowel in each inner loop and check if max
+    *   3. If max count is equal to k , return max
     */
+
+    private int maxVowelString(String str , int k){
+        int count =0,maxCount=0;
+        for(int i=0;i<str.length()-k;i++){
+            for(int j=i;j<i+k;j++){
+                if(isVowel(str.charAt(j)))count++;
+            }
+            maxCount=Math.max(maxCount,count);
+            count=0;
+        }
+        return  maxCount;
+    }
+
 
 
 
