@@ -2,7 +2,7 @@ package slidingWindow;
 
 import org.junit.Test;
 
-public class maxVowelSubstringTest {
+public class MaxVowelSubstringTest {
     /*Given a string s and a number k, find the maximum number of vowels in substring of size k.
     String: "workaattech"
     k: 3
