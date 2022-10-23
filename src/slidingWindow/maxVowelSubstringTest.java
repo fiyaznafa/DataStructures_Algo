@@ -46,8 +46,8 @@ public class maxVowelSubstringTest {
     }
     /*
     *   Bruteforce
-    *   1. Using two for loops, one till
-    *   2.
+    *   1. Using two for loops, one till end -k, other loop goes until k
+    *   2. Count char is vowel in each inner loop and check if max
     */
 
 
