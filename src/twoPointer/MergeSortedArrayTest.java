@@ -1,4 +1,4 @@
-package arrays;
+package twoPointer;
 
 import org.junit.Test;
 
@@ -66,8 +66,6 @@ public class MergeSortedArrayTest {
     private int[] mergeSortedArray(int[] nums1,int m,int[] nums2,int n){
         if(n==0)return nums1;
         if(m==0) {
-            System.arraycopy(nums2,0,nums1,0,n);
-            return nums1;
         }
 
         int left=m-1, right=n-1;

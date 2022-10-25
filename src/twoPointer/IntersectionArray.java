@@ -1,4 +1,4 @@
-package arrays;
+package twoPointer;
 
 
 import org.junit.Assert;

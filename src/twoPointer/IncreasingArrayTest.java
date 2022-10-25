@@ -1,9 +1,9 @@
-package arrays;
+package twoPointer;
 
 import org.junit.Test;
 
 public class IncreasingArrayTest {
-    //https://leetcode.com/problems/remove-one-element-to-make-the-array-strictly-increasing/
+    //x
 
     @Test
     public void test1(){
