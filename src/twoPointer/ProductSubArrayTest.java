@@ -10,7 +10,7 @@ public class ProductSubArrayTest {
     public void test1(){
         int[] nums = {10,5,2,6,100};
         int k = 100;
-        Assert.assertEquals(8,subArrayProduct(nums,k));
+        Assert.assertEquals(8,subArrayProductOptimized(nums,k));
     }
 
 
@@ -18,22 +18,30 @@ public class ProductSubArrayTest {
     public void test2(){
         int[] nums = {1,2,3,4};
         int k = 0;
-        Assert.assertEquals(0,subArrayProduct(nums,k));
+        Assert.assertEquals(0,subArrayProductOptimized(nums,k));
     }
 
     @Test
     public void test3(){
         int[] nums = {1};
         int k = 2;
-        Assert.assertEquals(1,subArrayProduct(nums,k));
+        Assert.assertEquals(1,subArrayProductOptimized(nums,k));
     }
 
     @Test
     public void test4(){
         int[] nums = {57,44,92,28,66,60,37,33,52,38,29,76,8,75,22};
         int k = 18;
-        Assert.assertEquals(1,subArrayProduct(nums,k));
+        Assert.assertEquals(1,subArrayProductOptimized(nums,k));
     }
+
+    @Test
+    public void test5(){
+        int[] nums = {100,10,5,2,6,100};
+        int k = 100;
+        Assert.assertEquals(8,subArrayProductOptimized(nums,k));
+    }
+
 /*
 	Pseudocode - Brute force
 	1. Using two loop , find the product of ith element with i+1th element
@@ -61,6 +69,17 @@ public class ProductSubArrayTest {
                 else break;
             }
             product=1;
+        }
+        return count;
+    }
+
+    private int subArrayProductOptimized(int[] nums,int target){
+        int left=0,right=0,count=0,product=1;
+        while (right<nums.length){
+            product*=nums[right];
+            while(product>=target && left<=right)product/=nums[left++];
+            count+=right-left+1;
+            right++;
         }
         return count;
     }
