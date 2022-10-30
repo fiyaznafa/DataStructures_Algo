@@ -22,28 +22,28 @@ public class Anagram {
     public void test1(){
         String str1="anagram";
         String str2="nagaram";
-        System.out.println(checkAnagram(str1,str2));
+        System.out.println(checkAnagramAscii(str1,str2));
     }
 
     @Test
     public void test2(){
         String str1="cat";
         String str2="rat";
-        System.out.println(checkAnagram(str1,str2));
+        System.out.println(checkAnagramAscii(str1,str2));
     }
 
     @Test
     public void test3(){
         String str1="tea";
         String str2="nagaram";
-        System.out.println(checkAnagram(str1,str2));
+        System.out.println(checkAnagramAscii(str1,str2));
     }
 
     @Test
     public void test4(){
         String str1="accca";
         String str2="aaaccs";
-        System.out.println(checkAnagram(str1,str2));
+        System.out.println(checkAnagramAscii(str1,str2));
     }
 
 
@@ -68,6 +68,20 @@ public class Anagram {
         }
         return  map;
     }
+
+    private boolean checkAnagramAscii(String s,String t){
+        if(s.length()!=t.length())return false;
+        int[] count = new int[26];
+        for (int i=0;i<s.length();i++){
+            count[s.charAt(i)-'a']++;
+            count[t.charAt(i)-'a']--;
+        }
+        for (int i=0;i<s.length();i++){
+            if(count[s.charAt(i)-'a']>=1)return false;
+        }
+        return true;
+    }
+
 
 
 }
