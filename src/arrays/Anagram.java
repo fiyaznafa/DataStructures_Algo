@@ -77,7 +77,7 @@ public class Anagram {
             count[t.charAt(i)-'a']--;
         }
         for (int i=0;i<s.length();i++){
-            if(count[s.charAt(i)-'a']>=1)return false;
+            if(count[s.charAt(i)-'a']>0)return false;
         }
         return true;
     }
