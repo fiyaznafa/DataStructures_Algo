@@ -12,26 +12,26 @@ public class TwoSum {
     public void test1(){
         int[] nums ={2,7,11,15};
         int target =9;
-        System.out.println(Arrays.toString(findTwoSum(nums,target)));    }
+        System.out.println(Arrays.toString(findingSumUsingMapOptimized(nums,target)));    }
 
     @Test
     public void test2(){
         int[] nums ={3,2,4};
         int target=6;
-        System.out.println(Arrays.toString(findTwoSum(nums,target)));
+        System.out.println(Arrays.toString(findingSumUsingMapOptimized(nums,target)));
     }
 
     @Test
     public void test3(){
         int[] nums ={2,7,11,15};
         int target =9;
-        System.out.println(Arrays.toString(findtwoSumUsingMap(nums,target)));    }
+        System.out.println(Arrays.toString(findingSumUsingMapOptimized(nums,target)));    }
 
     @Test
     public void test4(){
         int[] nums ={3,2,4};
         int target=6;
-        System.out.println(Arrays.toString(findtwoSumUsingMap(nums,target)));
+        System.out.println(Arrays.toString(findingSumUsingMapOptimized(nums,target)));
     }
 
     /*
@@ -80,5 +80,20 @@ public class TwoSum {
             }
         }
         return indices;
+    }
+
+
+
+    private int[] findingSumUsingMapOptimized(int[] nums, int target){
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length ; i++) {
+            if(map.containsKey(target - nums[i])&& i!=map.get(target-nums[i])) {
+                return new int[]{map.get(target-nums[i]),i};
+            }else{
+                map.put(nums[i],i);
+            }
+        }
+        return new int[]{};
     }
 }
