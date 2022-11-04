@@ -22,6 +22,7 @@ public class CommonWordTest {
         System.out.println(mostCommonWord(paragraph,banned));
     }
 
+
 /*
 	1. Add all the banned words to a Set
 	2. Split the string with a regex \w
@@ -36,11 +37,19 @@ public class CommonWordTest {
 
         String[] allWords =paragraph.split("\\W+");
         HashMap<String,Integer> map = new HashMap<>();
+        int count,max=Integer.MIN_VALUE;
+        String commonWord="";
         for(String eachWord : allWords){
-            if(!set.contains(eachWord.toLowerCase()))map.put(eachWord.toLowerCase(),map.getOrDefault(eachWord.toLowerCase(),0)+1);
+            if(!set.contains(eachWord.toLowerCase())){
+                count= map.getOrDefault(eachWord.toLowerCase(), 0)+1;
+                if(count>max){
+                    max=count;
+                    commonWord=eachWord.toLowerCase();
+                }
+                map.put(eachWord,count);
+            }
+
         }
-        List<Map.Entry<String,Integer>> list = new ArrayList<>(map.entrySet());
-        list.sort(Map.Entry.comparingByValue());
-        return list.get(list.size()-1).getKey();
+        return commonWord;
     }
 }

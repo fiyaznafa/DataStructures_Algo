@@ -57,16 +57,11 @@ public class IntersectionArrayIITest {
             else if(nums1[left]<nums2[right])left++;
             else {list.add(nums1[left]); left++;right++;}
         }
-        int[] arr = new int[list.size()];
+        int[] output = new int[list.size()];
         int i=0;
-        for(Integer integer:list){
-            arr[i++]=integer;
-        }
-        return  arr;
-    }
+        for (int no:list)output[i++]=no;
 
-    private void interSectionArrayOptimized(int[] nums1,int[] nums2){
-
+        return output;
     }
 
 }
