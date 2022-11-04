@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ContansDuplucateIITest {
+public class ContansDuplicateIITest {
 
     @Test
     public void test1(){
@@ -26,7 +26,7 @@ public class ContansDuplucateIITest {
     public void test3(){
         int[] nums = {1,2,3,1,2,3};
         int k = 1;
-        Assert.assertFalse(containsDuplicate(nums,k));
+        Assert.assertFalse( containsDuplicate(nums,k));
     }
 
     private boolean containsDuplicate(int[] nums, int k) {
