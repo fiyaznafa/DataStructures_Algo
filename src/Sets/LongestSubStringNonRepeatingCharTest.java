@@ -38,11 +38,7 @@ public class LongestSubStringNonRepeatingCharTest {
         int left =0, right =0,maxlength=0;
         Set<Character> set = new HashSet<>();
         while(right<s.length()){
-            if(set.contains(s.charAt(right))){
-                while(s.charAt(left)!=s.charAt(right))
-                    set.remove(s.charAt(left++));
-                set.remove(s.charAt(left++));
-            }
+            while (set.contains(s.charAt(right)))set.remove(s.charAt(left++));
             set.add(s.charAt(right++));
             maxlength=Math.max(maxlength,right-left);
         }
