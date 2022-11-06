@@ -8,13 +8,13 @@ public class MaxProductSubArrayTest {
     @Test
     public void test1(){
         int[] nums ={2,3,-4,5,1};
-        Assert.assertEquals(6,maxProductSubarray(nums));
+        System.out.println(maxProductSubArrayOpt(nums));
     }
 
     @Test
     public void test2(){
         int[] nums ={2,3,-4,5,1,-3};
-        Assert.assertEquals(360,maxProductSubarray(nums));
+        System.out.println(maxProductSubArrayOpt(nums));
     }
 
     @Test
@@ -29,10 +29,26 @@ public class MaxProductSubArrayTest {
             for (int j = i; j < nums.length ; j++) {
                 product*=nums[j];
                 maxProduct=Math.max(product,maxProduct);
-
             }
             product=1;
         }
         return maxProduct;
     }
+
+    /*
+        Optimizing by calculating min and max product
+     */
+
+    private int maxProductSubArrayOpt(int[] nums){
+        int i=0,curMax=1, curMin=1,temp,res=Integer.MIN_VALUE;
+        while(i< nums.length){
+            temp=curMax*nums[i];
+            curMax=Math.max(nums[i], Math.max(nums[i]*curMax,nums[i]*curMin));
+            curMin=Math.min(nums[i],Math.min(temp,nums[i]*curMin));
+            i++;
+            res=Math.max(res,curMax);
+        }
+    return res;
+    }
+
 }
