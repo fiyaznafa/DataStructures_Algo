@@ -72,4 +72,38 @@ public class LongestSubStrinVowelTest {
         }
         return maxLength;
     }
+
+
+
+
+
+    /*  Optimized -
+     1. If character is  same as previous character - increment the length
+     2. Else If character value is greater than the previous character - increment vowel count
+     3. Else , reset the count to 1 and length to 1
+     4. If vowel count reaches 5 , add to the maxlength
+
+     int cnt=1;
+        int len=1;
+        int max_length=0;
+
+        int n=word.length();
+
+        for(int i=1;i<n;i++){
+            if(word.charAt(i)==word.charAt(i-1)){
+                 len++;
+            }else if(word.charAt(i-1)<word.charAt(i)){
+                cnt++;
+                len++;
+            }else{
+                len=1;
+                cnt=1;
+            }
+
+            if(cnt==5){
+                max_length=Math.max(max_length,len);
+            }
+        }
+        return max_length;
+     */
 }
