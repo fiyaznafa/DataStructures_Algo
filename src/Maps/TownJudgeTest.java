@@ -49,6 +49,7 @@ public class TownJudgeTest {
      */
 
     private int townJudge(int n, int[][] trust) {
+        if(n==1 && trust.length ==0 )return 1;
         Set<Integer> folksTown = new HashSet<>();
         int allCandidate ;
         Map<Integer,Integer> candidate = new HashMap<>();
