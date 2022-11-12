@@ -18,7 +18,7 @@ public class LongestSubStringNonRepeatingCharTest {
     @Test
     public void test1(){
         String s="abcabcbb";
-        System.out.println(longestSubString(s));
+        System.out.println(longestSubStringOptimized(s));
     }
 
 
@@ -31,7 +31,7 @@ public class LongestSubStringNonRepeatingCharTest {
     @Test
     public void test3(){
         String s="pwwkew";
-        System.out.println(longestSubString(s));
+        System.out.println(longestSubStringOptimized(s));
     }
 
     private int longestSubString(String s){
@@ -43,6 +43,20 @@ public class LongestSubStringNonRepeatingCharTest {
             maxlength=Math.max(maxlength,right-left);
         }
         return maxlength;
+    }
+
+
+    private int longestSubStringOptimized(String s){
+        int maxLength=0;
+        int[] arr= new int[256];
+        for (int i = 0,j=0; i <s.length() ; i++) {
+            if(arr[s.charAt(i)]==1){
+                while(arr[s.charAt(i)]==1)arr[s.charAt(j++)]--;
+            }
+            arr[s.charAt(i)]++;
+            maxLength=Math.max(maxLength,i-j+1);
+        }
+        return maxLength;
     }
 
 }
