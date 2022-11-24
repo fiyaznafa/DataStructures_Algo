@@ -49,7 +49,7 @@ public class ReverseLinkedListTest {
             rev=head;
             head=temp;
         }
-        return head;
+        return rev;
     }
 
 }
