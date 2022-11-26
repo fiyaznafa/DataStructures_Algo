@@ -14,7 +14,7 @@ public class SquareSortedArrayTest {
 testdata [-4,-1,0,3,10]
 testdata [-7,-3,2,3,11]
 	Pseudocode - Two pointer
-	1. Iterate the array With one pointer at start of the array and 2nd pointer at the end of the array.
+	1. Iterate the array With one pointer at start of the                                                                                                                                                                                                       array and 2nd pointer at the end of the array.
 	2. If Math.abs (left>right)
 		Add the square to the left to output of array
 		increase the left array
