@@ -31,7 +31,7 @@ public class StudentAndSandwichesTest {
 	3. If the element at studentQueue is not same as sandwichQueue
 		Remove the student from studentQueue and add to the Queue (end)
 		and increase counter
-	4. Iterate until end of the queue or till count reaches greater than size of studentQueue
+	4. Iterate until end of the queue or till count equal size of studentQueue
 
 */
 
