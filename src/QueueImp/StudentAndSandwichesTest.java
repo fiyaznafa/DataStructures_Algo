@@ -21,7 +21,14 @@ public class StudentAndSandwichesTest {
     public void test2(){
         int[] students={1,1,1,0,0,1};
         int[] sandwiches={1,0,0,0,1,1};
-        Assert.assertEquals(3,countStudents(students,sandwiches));
+        Assert.assertEquals(3,countStudentsOptimized(students,sandwiches));
+    }
+
+    @Test
+    public void test3(){
+        int[] students={1,1,1,0,0,0};
+        int[] sandwiches={0,0,0,1,0,0};
+        Assert.assertEquals(2,countStudentsOptimized(students,sandwiches));
     }
 
 /*
@@ -56,4 +63,22 @@ public class StudentAndSandwichesTest {
         }
         return count;
     }
+
+    private int countStudentsOptimized(int[] students, int[] sandwiches){
+        Queue<Integer> studentQueue = new ArrayDeque<>();
+        for (int eachStudent:students) studentQueue.add(eachStudent);
+        int sandwichIndex=0,count=0;
+        while(count!=studentQueue.size()){
+            if(studentQueue.peek()==sandwiches[sandwichIndex]){
+                sandwichIndex++;
+                count=0;
+            }
+            else {
+                studentQueue.add(studentQueue.peek());
+                count++;
+            }
+            studentQueue.poll();
+        }
+        return studentQueue.size();
+        }
 }
