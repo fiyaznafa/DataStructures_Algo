@@ -34,4 +34,23 @@ public class JewelsAndStonesTest {
         }
         return count;
     }
+
+
+    /*
+        Pseudocode
+        1. Add all the jewels to int[]
+        2. Iterate through stones and check char value is greater than 1 in arr[]
+            i. if present increment the count
+        3. Return count
+    */
+    public int numJewelsInStones(String jewels, String stones) {
+        int[] array=new int[128];
+        for(char c:jewels.toCharArray())array[c]++;
+
+        int count =0;
+        for(char c:stones.toCharArray()){
+            if(array[c]==1)count++;
+        }
+        return count;
+    }
 }
