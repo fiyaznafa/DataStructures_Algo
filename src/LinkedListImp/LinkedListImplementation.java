@@ -3,9 +3,9 @@ package LinkedListImp;
 
 public class LinkedListImplementation {
 
-    ListNode head;
-    ListNode tail;
-    int length=0;
+    public ListNode head;
+    public ListNode tail;
+    public int length=0;
 
     public void add(int value){
         if(head==null)head=tail=new ListNode(value);
