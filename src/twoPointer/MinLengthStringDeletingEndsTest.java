@@ -38,21 +38,24 @@ public class MinLengthStringDeletingEndsTest {
            3. If char are not equal then return the length - right -left
         */
     public int minimumLength(String s) {
-
         int left=0,right=s.length()-1;
         char startChar,endChar;
-        while(left<=right){
+        boolean flag=false;
+        while(left<right){
             if(s.charAt(left)==s.charAt(right)){
                 startChar=s.charAt(left);
                 endChar=s.charAt(right);
-                while(s.charAt(left)==startChar && left<=right &&left<s.length()-1){
-                    System.out.println(left);
-                    left++;
+                while(s.charAt(left)==startChar && left<right){left++;
+                    if (left == right) {
+                        flag = true;
+                        break;
+                    }
                 }
                 while(s.charAt(right)==endChar && left<right)right--;
             }
             else break;
         }
-        return Math.abs(right-left+1);
+        if(flag)return 0;
+        else return right-left+1;
     }
 }
