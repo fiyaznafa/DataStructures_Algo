@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 public class ArrangeCookiesTest {
     //https://leetcode.com/problems/assign-cookies/
+    //455. Assign Cookies
 
 /*
 Test Data
@@ -61,5 +62,17 @@ Test Data
             right++;
         }
         return left;
+    }
+
+
+    public int findContentChildren(int[] g, int[] s) {
+        int greedPointer=0,cookiePointer=0;
+        Arrays.sort(g);
+        Arrays.sort(s);
+        while(greedPointer<g.length && cookiePointer<s.length){
+            if(g[greedPointer]<=s[cookiePointer])greedPointer++;
+            cookiePointer++;
+        }
+        return greedPointer;
     }
 }
