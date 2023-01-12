@@ -1,6 +1,7 @@
 package Search;
 
-import org.junit.Test;
+
+import org.testng.annotations.Test;
 
 public class BinarySearchTest {
 
@@ -10,7 +11,7 @@ public class BinarySearchTest {
 //09:09
 @Test
 public void test1(){
-int [] arr =new int[]{-1,0,3,5,9,12};
+int [] arr =new int[]{-1,0,3,5,9,12,14};
 int target=9;
     System.out.println(findIndex(arr,target));
 }
