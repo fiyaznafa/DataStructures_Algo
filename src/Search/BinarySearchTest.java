@@ -11,7 +11,7 @@ public class BinarySearchTest {
 //09:09
 @Test
 public void test1(){
-int [] arr =new int[]{-1,0,3,5,9,12,14};
+int [] arr =new int[]{-1,0,3,5,9,12,26,34};
 int target=9;
     System.out.println(findIndex(arr,target));
 }
