@@ -1,7 +1,7 @@
 package slidingWindow;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
 public class KandaneAlgorithmTest {
 

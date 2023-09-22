@@ -1,7 +1,9 @@
 package arrays;
 
-import org.junit.Assert;
+
 import org.junit.Test;
+
+import org.junit.Assert;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +13,7 @@ public class HappyNmberTest {
     //https://leetcode.com/problems/happy-number/
 //Start : 20:37 End
 
-    @Test
+    @org.junit.Test
     public void test1(){
         int n = 19;
         Assert.assertTrue(isHappy(n));

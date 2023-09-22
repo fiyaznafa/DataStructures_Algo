@@ -1,17 +1,17 @@
 package twoPointer;
 
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class DuplicateSequenceTest {
 
-    @Test(priority = 2)
+    @Test
     public void test1(){
         String str="aabbcaa";
         System.out.println(findDuplicateSequence(str));
     }
 
-    @Test(priority = 1)
+    @Test
     public void test2(){
         String str="aaabbbccaaad";
         System.out.println(findDuplicateSequence(str));

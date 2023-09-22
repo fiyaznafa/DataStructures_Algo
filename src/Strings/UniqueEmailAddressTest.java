@@ -1,7 +1,7 @@
 package Strings;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ public class UniqueEmailAddressTest {
     @Test
     public void test1(){
         String[] emails ={"test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"};
-        Assert.assertEquals(2, noUniqueEmail(emails));
+         Assert.assertEquals(2, noUniqueEmail(emails));
     }
 
     @Test

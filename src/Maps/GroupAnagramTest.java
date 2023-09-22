@@ -37,7 +37,7 @@ public class GroupAnagramTest {
 */
 
     private List<List<String>> groupAnagram(String[] strs){
-        List<List<String>> values =new ArrayList<>(){};
+        List<List<String>> values =new ArrayList<>();
         if (strs.length==0)return values;
         Map<String, List<String>> allMap = new HashMap<>();
         for(String eachString:strs) {

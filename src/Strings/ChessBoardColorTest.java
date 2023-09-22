@@ -12,6 +12,7 @@ public class ChessBoardColorTest {
 
     public boolean squareIsWhite(String coordinates) {
 
+        coordinates.split("\\s+");
         int firstValue =coordinates.charAt(0)-'a';
         int secondValue = coordinates.charAt(1)-'0';
         System.out.println(secondValue);
